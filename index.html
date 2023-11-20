@@ -15,7 +15,7 @@
         
         <div class="card mb-3 bg-danger">
             <div class="card-body">
-                <h2 class="card-title text-white text-center">Páginas y Layouts</h2>
+                <h2 class="card-title text-white text-center">Paginas</h2>
                 <ul class="list-group">
                     <li class="list-group-item"> <span class="font-weight-bold">ContentPage</span> 
                     <br>    
@@ -25,7 +25,7 @@
                     <span class="font-weight-bold">Sintaxis de ejemplo</span>
                     <br>
                     <br>
-                    <div class="font-weight-bold text-center">*Xmal*</div>
+                    <div class="font-weight-bold text-center">*Xaml*</div>
                     <br>
                     <div>&lt;?xml version="1.0" encoding="utf-8" ?&gt;</div>
                       <div>  &lt;ContentPage xmlns="http://xamarin.com/schemas/2014/forms"</div>
@@ -121,7 +121,8 @@
                     <li class="list-group-item"><span class="font-weight-bold border border-1">FlyoutPage</span>
                     <br>
                     <br>  asi como NavigationPage, FlyoutPage es proveniente de la libreria xamarin.forms, esta permite desplejar un menu horizontal, en el cual se podran acceder a la pestañas 
-                    que esten disponibles en la aplicacion
+                    que esten disponibles en la aplicacion, util dependiendo en que tipo de applicacion se quiere crear, un ejemplo que se me viene a la mente seria el  caso de z-cpu, una app movil
+                    que te muestra la caracteristicas de tu dispositivo movil , y el cual separa sus pestañas mediante Flyoutpages
                     <br>
                     <br>
                     <div class="text-center font-weight-bold">Sintaxis de Ejemplo</div>
@@ -179,9 +180,49 @@
 
                     </li>
 
-                    <li class="list-group-item"><span class="font-weight-bold">TabbedPage</span></li>
+                    <li class="list-group-item"><span class="font-weight-bold">TabbedPage</span>
+                    <br>
+                    <br>es un tipo de página en Xamarin.Forms que permite organizar el contenido en pestañas. Cada pestaña puede contener su propio contenido independiente. 
+                    Esto es bastante util, ya que se puede mantener un orden con la informacion y elementos que vayamos agregando
                     <br>
                     <br>
+                    <div class="font-weight-bold text-center">Sintaxis del ejemplo</div>
+                    <br>
+                    <br>
+                    <div>&lt;TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"</div>
+                       <div> xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"</div>
+                        <div>x:Class="Glosario.MainPage"&gt;</div>
+            <br>
+            <br>
+                
+                        <div class="font-weight-bold text-center">primera pestaña</div>
+                        <br>
+               <div> &lt;ContentPage Title="Pestaña 1"&gt;</div>
+                    <div>&lt;StackLayout&gt;</div>
+                        <div>&lt;Label Text="Contenido de la Pestaña 1" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" /&gt;</div>
+                    <div>&lt;/StackLayout&gt;</div>
+                <div>&lt;/ContentPage&gt;</div>
+            <br>
+                <div class="font-weight-bold text-center">segunda pestaña</div>
+                <br>
+                <div>&lt;ContentPage Title="Pestaña 2"&gt;</div>
+                <div> &lt;StackLayout&gt;</div>
+            <div>   &lt;Label Text="Contenido de la Pestaña 2" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" /&gt;</div>
+                        <div> &lt;/StackLayout&gt;</div>
+                    <div> &lt;/ContentPage&gt;</div>
+            <br>
+                <div class="font-weight-bold text-center">3ra pagina</div>
+                <br>
+               <div>&lt;ContentPage Title="Pestaña 3"&gt;</div>
+               <div>&lt;StackLayout&gt;</div>
+               <div>&lt;Label Text="Contenido de la Pestaña 3" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" /&gt;
+                <div> &lt;/StackLayout&gt;</div>
+                <div> &lt;/ContentPage&gt;</div>
+            <br>
+            &lt;/TabbedPage&gt;</div>
+            
+                    </li>
+                    
                 </ul>
             </div>
         </div>
@@ -191,10 +232,108 @@
             <div class="card-body">
                 <h2 class="card-title text-white text-center">Layouts</h2>
                 <ul class="list-group">
-                    <li class="list-group-item"><span class="font-weight-bold">StackLayout</span></li>
-                    <li class="list-group-item"><span class="font-weight-bold">Grid</span></li>
-                    <li class="list-group-item"><span class="font-weight-bold">AbsoluteLayout</span></li>
-                    <li class="list-group-item"><span class="font-weight-bold">FlexLayout</span></li>
+                    <li class="list-group-item"><span class="font-weight-bold">StackLayout</span>
+                    <br>
+                    <br> StackLayout nos permite organizar elementos secundarios de nuestrap, tanto de manera vertical(arriba-abajo), 
+                    como horizontalmente (izquierda-derecha), por ejemplo un label y un entry, si definimos de forma vertical el stack, 
+                    los elementos se mostraran de arriba a abajo conforme las vayamos agregando,
+                    asi mismo si lo definimos de manera horizontal de izquierda a derecha
+                    <br>
+                    <br>
+                    <div class="font-weight-bold text-center">Sintaxis de Ejemplo</div>
+                    <br>
+                    <br>
+                   
+                    <div> &lt;ContentPage xmlns="http://xamarin.com/schemas/2014/forms" </div>
+                    <div>   xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+                        <div>  x:Class="Glosario.MainPage"&gt;
+                                  <br>
+                                <div>   &lt;StackLayout&gt;
+                                    <br>
+                                    <div class="font-weight-bold">label</div>
+                                    <br>
+                                        <div>  &lt;Label Text="Hola, este es un ejemplo de StackLayout" </div>
+                                            <div>      VerticalOptions="CenterAndExpand" </div>
+                                      <div> HorizontalOptions="CenterAndExpand" /&gt;</div>
+                                              <br>
+                                        <div class="font-weight-bold">Botón</div>
+                                        <br>
+                                            <div>   &lt;Button Text="Haz clic" </div>
+                                           <div> Clicked="OnButtonClicked" </div>
+                                            <div>VerticalOptions="CenterAndExpand" </div>
+                                            <div>HorizontalOptions="CenterAndExpand" /&gt;</div>
+                                         <br>
+                                        <div>  &lt;!-- Segundo Label --&gt;</div>
+                                            <div>  &lt;Label Text="¡Bienvenido a Xamarin.Forms!" </div>
+                                   <div> VerticalOptions="CenterAndExpand" </div>
+                                   <div> HorizontalOptions="CenterAndExpand" /&gt;</div>
+                          <div>  &lt;/StackLayout&gt;</div>
+                       <div> &lt;/ContentPage&gt;</div>
+
+                    </div>
+                    </li>
+                    <li class="list-group-item"><span class="font-weight-bold">Grid</span>
+                    <br>
+                    <br> en resumidas cuentas, el El layout grid nos permite crear disposiciones de forma cuadriculada,
+                     definiendo la anchura y altura de el contenedor, dependiendo la aplicacion que se desea crear, 
+                     se puede optar por su uso, un ejemplo rapido que se me viene a la cabeza es un juego de simon dice
+                     (almacenando los botones en cada contenedor)
+                     <br>
+                     <br>
+                     <a href="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Simon_Electronic_Game.jpg/640px-Simon_Electronic_Game.jpg">imagen-adjunta</a>
+                     <div class="font-weight-bold text-center">Sintaxis de Ejemplo</div>
+
+                     
+                        <div> &lt;ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"</div>
+                        <div> xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                            <div> x:Class="Glosario.MainPage"&gt;
+                                <br>
+                                  <br>
+                       <div>&lt;Grid&gt;</div>
+                        <div>&lt;Grid.RowDefinitions&gt;</div>
+                         <div>&lt;RowDefinition Height="Auto" /&gt;</div>
+                        <div>&lt;RowDefinition Height="Auto" /&gt;</div>
+                      <div>&lt;RowDefinition Height="*" /&gt;</div>
+                     <div>&lt;/Grid.RowDefinitions&gt;</div>
+                              <br>
+                              <br>
+                   <div>&lt;Grid.ColumnDefinitions&gt;</div>
+                   <div>&lt;ColumnDefinition Width="Auto" /&gt;</div>
+                     <div>&lt;ColumnDefinition Width="*" /&gt;</div>
+                        <div> &lt;/Grid.ColumnDefinitions&gt;</div>
+           <br>
+           <br>
+                    <div>&lt;!-- Primer Label en la primera fila y primera columna --&gt;</div>
+                        <div>&lt;Label Text="Label 1" Grid.Row="0" Grid.Column="0" /&gt;</div>
+           <br>
+           <br>
+                    <div> &lt;!-- Segundo Label en la segunda fila y primera columna --&gt;</div>
+                    <div>&lt;Label Text="Label 2" Grid.Row="1" Grid.Column="0" /&gt;</div>
+           <br>
+           <br>
+                      <div>&lt;!-- Botón en la segunda fila y segunda columna --&gt;</div>
+                      <div> &lt;Button Text="Haz clic" Clicked="OnButtonClicked" Grid.Row="1" Grid.Column="1" /&gt;</div>
+           <br>
+           <br>
+                    <div>&lt;!-- Tercer Label que ocupa toda la tercera fila y la primera columna --&gt;</div>
+                     <div> &lt;Label Text="Label 3" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" /&gt;</div>
+                     <div>&lt;/Grid&gt;</div>
+           <br>
+           
+               <div>&lt;/ContentPage&gt;</div>
+                     
+                    </li>
+                    <li class="list-group-item"><span class="font-weight-bold">AbsoluteLayout</span>
+                    <br>
+                    <br> al igual que Grid, AbsoluteLayout nos permite almacenar elemento dentro de contenedores
+                    con la diferencia de que podemos definir de manera exacta las coordenadas en las cuales de ordenaran los elementos
+                    <br>
+                    <br>
+                    </li>
+                    <li class="list-group-item"><span class="font-weight-bold">FlexLayout</span>
+                    <br>
+                    <br>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -204,12 +343,30 @@
             <div class="card-body">
                 <h2 class="card-title text-white text-center">Controles Gráficos</h2>
                 <ul class="list-group">
-                    <li class="list-group-item"><span class="font-weight-bold">Line</span></li>
-                    <li class="list-group-item"><span class="font-weight-bold">Polyline</span></li>
-                    <li class="list-group-item"><span class="font-weight-bold">BoxView</span></li>
-                    <li class="list-group-item"><span class="font-weight-bold">Rectangle</span></li>
-                    <li class="list-group-item"><span class="font-weight-bold">Ellipse</span></li>
-                    <li class="list-group-item"><span class="font-weight-bold">Polygon</span></li>
+                    <li class="list-group-item"><span class="font-weight-bold">Line</span>
+                    <br>
+                    <br>
+                    /li>
+                    <li class="list-group-item"><span class="font-weight-bold">Polyline</span>
+                    <br>
+                    <br>
+                    </li>
+                    <li class="list-group-item"><span class="font-weight-bold">BoxView</span>
+                    <br>
+                    <br>
+                    </li>
+                    <li class="list-group-item"><span class="font-weight-bold">Rectangle</span>
+                    <br>
+                    <br>
+                    </li>
+                    <li class="list-group-item"><span class="font-weight-bold">Ellipse</span>
+                    <br>
+                    <br>
+                    </li>
+                    <li class="list-group-item"><span class="font-weight-bold">Polygon</span>
+                    <br>
+                    <br>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -219,18 +376,54 @@
             <div class="card-body">
                 <h2 class="card-title text-center text-white">Controles de Formulario</h2>
                 <ul class="list-group">
-                    <li class="list-group-item"><span class="font-weight-bold">Label</span></li>
-                    <li class="list-group-item"><span class="font-weight-bold">Entry</span></li>
-                    <li class="list-group-item"><span class="font-weight-bold">RadioButton</span></li>
-                    <li class="list-group-item"><span class="font-weight-bold">CheckBox</span></li>
-                    <li class="list-group-item"><span class="font-weight-bold">Switch</span></li>
-                    <li class="list-group-item"><span class="font-weight-bold">Slider</span></li>
-                    <li class="list-group-item"><span class="font-weight-bold">Stepper</span></li>
-                    <li class="list-group-item"><span class="font-weight-bold">DatePicker</span></li>
-                    <li class="list-group-item"><span class="font-weight-bold">TimePicker</span></li>
-                    <li class="list-group-item"><span class="font-weight-bold">Button</span></li>
-                    <li class="list-group-item"><span class="font-weight-bold">ImageButton</span></li>
-                    <li class="list-group-item"><span class="font-weight-bold">Picker</span></li>
+                    <li class="list-group-item"><span class="font-weight-bold">Label</span>
+                    <br>
+                    <br>
+                    </li>
+                    <li class="list-group-item"><span class="font-weight-bold">Entry</span>
+                    <br>
+                    <br>
+                    </li>
+                    <li class="list-group-item"><span class="font-weight-bold">RadioButton</span>
+                    <br>
+                    <br>
+                    </li>
+                    <li class="list-group-item"><span class="font-weight-bold">CheckBox</span>
+                    <br>
+                    <br>
+                    </li>
+                    <li class="list-group-item"><span class="font-weight-bold">Switch</span>
+                    <br>
+                    <br>
+                    </li>
+                    <li class="list-group-item"><span class="font-weight-bold">Slider</span>
+                    <br>
+                    <br>
+                    </li>
+                    <li class="list-group-item"><span class="font-weight-bold">Stepper</span>
+                    <br>
+                    <br>
+                    </li>
+                    <li class="list-group-item"><span class="font-weight-bold">DatePicker</span>
+                    <br>
+                    <br>
+                    </li>
+                    <li class="list-group-item"><span class="font-weight-bold">TimePicker</span>
+                    <br>
+                    <br>
+                    </li>
+                    <li class="list-group-item"><span class="font-weight-bold">Button</span>
+                    <br>
+                    <br>
+                    </li>
+                    <li class="list-group-item"><span class="font-weight-bold">ImageButton</span>
+                    <br>
+                    <br>
+                    </li>
+                    <li class="list-group-item"><span class="font-weight-bold">Picker</span>
+                    <br>
+                    <br>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -239,13 +432,34 @@
             <div class="card-body ">
                 <h2 class="card-title text-center">Otros Controles</h2>
                 <ul class="list-group border border-danger">
-                    <li class="list-group-item"><span class="font-weight-bold">Border</span></li>
-                    <li class="list-group-item"><span class="font-weight-bold">Frame</span></li>
-                    <li class="list-group-item"><span class="font-weight-bold">Image</span></li>
-                    <li class="list-group-item"><span class="font-weight-bold">WebView</span></li>
-                    <li class="list-group-item"><span class="font-weight-bold">ActivityIndicator</span></li>
-                    <li class="list-group-item"><span class="font-weight-bold">ProgressBar</span></li>
-                    <li class="list-group-item"><span class="font-weight-bold">TableView</span></li>
+                    <li class="list-group-item"><span class="font-weight-bold">Border</span>
+                    <br>
+                    <br>    
+                    </li>
+                    <li class="list-group-item"><span class="font-weight-bold">Frame</span>
+                    <br>
+                    <br>
+                    </li>
+                    <li class="list-group-item"><span class="font-weight-bold">Image</span>
+                    <br>
+                    <br>
+                    </li>
+                    <li class="list-group-item"><span class="font-weight-bold">WebView</span>
+                    <br>
+                    <br>
+                    </li>
+                    <li class="list-group-item"><span class="font-weight-bold">ActivityIndicator</span>
+                    <br>
+                    <br>
+                    </li>
+                    <li class="list-group-item"><span class="font-weight-bold">ProgressBar</span>
+                    <br>
+                    <br>
+                    </li>
+                    <li class="list-group-item"><span class="font-weight-bold">TableView</span>
+                    <br>
+                    <br>    
+                    </li>
                 </ul>
             </div>
         </div>
