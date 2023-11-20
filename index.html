@@ -6,6 +6,7 @@
     <title>ELEMENTOS MAUI</title>
     
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    
 </head>
 <body>
 
@@ -43,7 +44,7 @@
                     <br>
                     <span class="font-weight-bold">Sintaxis de ejemplo</span>
                     <br>
-                    <div> suponiendo que hay 2 paginas creadas (las llamaremos principal y secundaria) y desde la principal se accede a la secundaria al presionar un boton</div>
+                    <div>Suponiendo que hay 2 paginas creadas (las llamaremos principal y secundaria) y desde la principal se accede a la secundaria al presionar un boton</div>
                     <br>
                     <div class="text-center font-weight-bold">*Xaml principal*</div>
                     <br>
@@ -64,7 +65,7 @@
                     <div> &lt;/StackLayout&gt;</div>
                     <br>         
                     <br>
-                    <div>en este caso, necesitaremos modificar el archivo csharp de cada uno de los xaml, tanto para implementar la navegacion entre paginas, 
+                    <div>En este caso, necesitaremos modificar el archivo csharp de cada uno de los xaml, tanto para implementar la navegacion entre paginas, 
                     como la funcionalidad del boton , el cual reedirecciona a la pagina secundaria(explicaremos mas a detalle lo ultimo despues)</div>
                     
                     <div class="text-center font-weight-bold">Csharp-xmalprincipal</div>
@@ -120,7 +121,7 @@
                     
                     <li class="list-group-item"><span class="font-weight-bold border border-1">FlyoutPage</span>
                     <br>
-                    <br>  asi como NavigationPage, FlyoutPage es proveniente de la libreria xamarin.forms, esta permite desplejar un menu horizontal, en el cual se podran acceder a la pestañas 
+                    <br> Asi como NavigationPage, FlyoutPage es proveniente de la libreria xamarin.forms, esta permite desplejar un menu horizontal, en el cual se podran acceder a la pestañas 
                     que esten disponibles en la aplicacion, util dependiendo en que tipo de applicacion se quiere crear, un ejemplo que se me viene a la mente seria el  caso de z-cpu, una app movil
                     que te muestra la caracteristicas de tu dispositivo movil , y el cual separa sus pestañas mediante Flyoutpages
                     <br>
@@ -182,7 +183,7 @@
 
                     <li class="list-group-item"><span class="font-weight-bold">TabbedPage</span>
                     <br>
-                    <br>es un tipo de página en Xamarin.Forms que permite organizar el contenido en pestañas. Cada pestaña puede contener su propio contenido independiente. 
+                    <br>Es un tipo de página en Xamarin.Forms que permite organizar el contenido en pestañas. Cada pestaña puede contener su propio contenido independiente. 
                     Esto es bastante util, ya que se puede mantener un orden con la informacion y elementos que vayamos agregando
                     <br>
                     <br>
@@ -274,7 +275,7 @@
                     </li>
                     <li class="list-group-item"><span class="font-weight-bold">Grid</span>
                     <br>
-                    <br> en resumidas cuentas, el El layout grid nos permite crear disposiciones de forma cuadriculada,
+                    <br> En resumidas cuentas, el El layout grid nos permite crear disposiciones de forma cuadriculada,
                      definiendo la anchura y altura de el contenedor, dependiendo la aplicacion que se desea crear, 
                      se puede optar por su uso, un ejemplo rapido que se me viene a la cabeza es un juego de simon dice
                      (almacenando los botones en cada contenedor)
@@ -303,19 +304,19 @@
                         <div> &lt;/Grid.ColumnDefinitions&gt;</div>
            <br>
            <br>
-                    <div>&lt;!-- Primer Label en la primera fila y primera columna --&gt;</div>
+                    <div>&lt; Primer Label en la primera fila y primera columna&gt;</div>
                         <div>&lt;Label Text="Label 1" Grid.Row="0" Grid.Column="0" /&gt;</div>
            <br>
            <br>
-                    <div> &lt;!-- Segundo Label en la segunda fila y primera columna --&gt;</div>
+                    <div> &lt;Segundo Label en la segunda fila y primera columna&gt;</div>
                     <div>&lt;Label Text="Label 2" Grid.Row="1" Grid.Column="0" /&gt;</div>
            <br>
            <br>
-                      <div>&lt;!-- Botón en la segunda fila y segunda columna --&gt;</div>
+                      <div>&lt;Botón en la segunda fila y segunda columna&gt;</div>
                       <div> &lt;Button Text="Haz clic" Clicked="OnButtonClicked" Grid.Row="1" Grid.Column="1" /&gt;</div>
            <br>
            <br>
-                    <div>&lt;!-- Tercer Label que ocupa toda la tercera fila y la primera columna --&gt;</div>
+                    <div>&lt;Tercer Label que ocupa toda la tercera fila y la primera columna&gt;</div>
                      <div> &lt;Label Text="Label 3" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" /&gt;</div>
                      <div>&lt;/Grid&gt;</div>
            <br>
@@ -325,14 +326,63 @@
                     </li>
                     <li class="list-group-item"><span class="font-weight-bold">AbsoluteLayout</span>
                     <br>
-                    <br> al igual que Grid, AbsoluteLayout nos permite almacenar elemento dentro de contenedores
+                    <br> Al igual que Grid, AbsoluteLayout nos permite almacenar elemento dentro de contenedores
                     con la diferencia de que podemos definir de manera exacta las coordenadas en las cuales de ordenaran los elementos
                     <br>
                     <br>
+                    <div>&lt;ContentPage xmlns="http://xamarin.com/schemas/2014/forms"</div>
+                    <div>xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                        <div>x:Class="TuProyecto.MainPage"&gt;</div>
+                                <br>
+                            <div> &lt;AbsoluteLayout&gt;</div>
+                                     <br>
+                                <div class="font-weight-bold text-center">Un Label en la posición (20, 20)</div>
+                                <br>
+                                    <div>&lt;Label Text="Label 1" AbsoluteLayout.LayoutBounds="0.1, 0.1, 100, 30" AbsoluteLayout.LayoutFlags="PositionProportional" /&gt;</div>
+                                    <br>
+                       <div class="font-weight-bold text-center">Boton la posición (50, 100)</div>
+                        <br>
+                        <div>&lt;Button Text="Haz clic" AbsoluteLayout.LayoutBounds="50, 100, 150, 40" AbsoluteLayout.LayoutFlags="PositionProportional" /&gt;</div>
+                                <br>
+                            <div class="font-weight-bold text-center">segundo Label en la posición (0.5, 0.8)</div>
+                            <br>
+                                <div>&lt;Label Text="Label 2" AbsoluteLayout.LayoutBounds="0.5, 0.8, 200, 30" AbsoluteLayout.LayoutFlags="PositionProportional" /&gt;</div>
+                                <br>
+                            <div> &lt;/AbsoluteLayout&gt;</div>
+           
+                        <div>  &lt;/ContentPage&gt;/div>
+
+                    
                     </li>
                     <li class="list-group-item"><span class="font-weight-bold">FlexLayout</span>
                     <br>
-                    <br>
+                    <br>Es un diseño en Xamarin.Forms que proporciona un modelo de diseño flexible basado en el modelo de diseño CSS flexbox. 
+                        Le permite organizar elementos secundarios de forma dinámica y flexible, 
+                        cambiando automáticamente el tamaño de los contenedores y asignando el espacio disponible de manera eficiente,
+                        perfecto para simplificar el trabajo
+                        <br>
+                        <br>
+                        <div class="font-weight-bold text-center">Sintaxis de Ejemplo</div>
+                        
+
+                        <div> &lt;ContentPage xmlns="http://xamarin.com/schemas/2014/forms"</div>
+                        <div>xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"</div>
+                        <div>x:Class="TuProyecto.MainPage"&gt;</div>
+                                <br>
+                                <div> &lt;FlexLayout Direction="Column" JustifyContent="Start" AlignItems="Center"&gt;</div>
+                                    <br>
+                                    <br>
+                                    <div> &lt;Label Text="Elemento 1" FlexLayout.Grow="1" /&gt;</div>
+                                    <br>
+                                    <br>
+                                    <div>&lt;Button Text="Haz clic" FlexLayout.Grow="2" Clicked="OnButtonClicked" /&gt;</div>
+                                    <br>
+                                    <div> &lt;!-- Elemento hijo 3 --&gt;</div>
+                                    <div>&lt;Label Text="Elemento 3" FlexLayout.Grow="1" /&gt;</div>
+                                    <br>
+                                    <div>&lt;/FlexLayout&gt;</div>
+                                <br>
+                                <div>&lt;/ContentPage&gt;</div>
                     </li>
                 </ul>
             </div>
@@ -345,8 +395,11 @@
                 <ul class="list-group">
                     <li class="list-group-item"><span class="font-weight-bold">Line</span>
                     <br>
+                    <br> Nos permite dibujar lineas en nuestra interfaz, 
+                         lo unico que debemos hacer es especificar las coordenadas del punto inicial y el punto final
                     <br>
-                    /li>
+                         <div class="font-weight-bold text-center"></div>
+                    </li>
                     <li class="list-group-item"><span class="font-weight-bold">Polyline</span>
                     <br>
                     <br>
