@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ELEMENTOS MAUI</title>
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+
+    <div class="container mt-5">
+        <h1 class="mb-4 text-center">Glosario Maui</h1>
+
+        
+        <div class="card mb-3 bg-danger">
+            <div class="card-body">
+                <h2 class="card-title text-white text-center">Páginas y Layouts</h2>
+                <ul class="list-group">
+                    <li class="list-group-item"> <span class="font-weight-bold">ContentPage</span> 
+                    <br>    
+                    <br> Nos proporciona un area en la cual nos permite almacenar los elementos y controles que que utilizaremos en nuestra app
+                    <br>
+                    <br>
+                    <span class="font-weight-bold">Sintaxis de ejemplo</span>
+                    <br>
+                    <br>
+                    <div class="font-weight-bold text-center">*Xmal*</div>
+                    <br>
+                    <div>&lt;?xml version="1.0" encoding="utf-8" ?&gt;</div>
+                      <div>  &lt;ContentPage xmlns="http://xamarin.com/schemas/2014/forms"</div>
+                                     <div>xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"</div>
+                                     <div>x:Class="Glosario.MainPage"&gt;</div>
+                            <br>
+                            <div>(aqui dentro se puede agregar todo lo que sea utilizado en la aplicacion)</div>
+                    <br>
+                       <div> &lt;/ContentPage&gt;</div>
+                    </li>
+                    <li class="list-group-item"> <span class="font-weight-bold">NavigationPage</span>
+                    <br>
+                    <br> Es un contenedor de paginas xaml, a las cuales podemos acceder en orden mediante stack, lo que facilita la navegacion entre las mismas
+                    <br>
+                    <br>
+                    <span class="font-weight-bold">Sintaxis de ejemplo</span>
+                    <br>
+                    <div> suponiendo que hay 2 paginas creadas (las llamaremos principal y secundaria) y desde la principal se accede a la secundaria al presionar un boton</div>
+                    <br>
+                    <div class="text-center font-weight-bold">*Xaml principal*</div>
+                    <br>
+                    <div>&lt;StackLayout&gt;</div>
+                    <br>
+                        <div>&lt;Label Text="Página Principal" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" /&gt;</div>
+                        <br>
+                        <div> &lt;Button Text="Ir a Otra Página" Clicked="IrAOtraPagina_Clicked" /&gt;</div>
+                        <br>
+                    <div> &lt;/StackLayout&gt;</div>
+                    <br>         
+                    <div class="text-center font-weight-bold">*Xaml Secundario*</div>
+                    <br>
+                    <div>&lt;StackLayout&gt;</div>
+                    <br>
+                        <div>&lt;Label Text="Otra Página" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" /&gt;</div>
+                        <br>
+                    <div> &lt;/StackLayout&gt;</div>
+                    <br>         
+                    <br>
+                    <div>en este caso, necesitaremos modificar el archivo csharp de cada uno de los xaml, tanto para implementar la navegacion entre paginas, 
+                    como la funcionalidad del boton , el cual reedirecciona a la pagina secundaria(explicaremos mas a detalle lo ultimo despues)</div>
+                    
+                    <div class="text-center font-weight-bold">Csharp-xmalprincipal</div>
+                    <div>using Xamarin.Forms; </div>
+
+                        <div>namespace Glosario</div>
+                       <div> { </div>
+                            <div>public partial class PaginaPrincipal : ContentPage</div>
+                            <div>{</div>
+                                <div>public PaginaPrincipal()</div>
+                                <div>{</div>
+                                    <div>InitializeComponent();</div>
+                                <div>}</div>
+                        
+                                <div>private async void IrAOtraPagina_Clicked(object sender, EventArgs e)</div>
+                                <div>{</div>
+                                   <div> await Navigation.PushAsync(new OtraPagina());</div>
+                                <div>}</div>
+                            }
+                        }
+                       
+                        <br>
+                        <div class="text-center font-weight-bold">Csharp-xmalsecundario</div>
+                        <br>
+                        <div>
+                            using Xamarin.Forms;</div>       
+                        <div>
+                            namespace Glosario</div>
+                        <div>
+                            {</div>
+                        <div>
+                            public partial class App : Application</div>
+                        <div>
+                            {</div>
+                        <div>
+                            public App()</div>
+                        <div>
+                            {</div>
+                        <div>
+                            InitializeComponent();</div>
+                        <div>
+                            MainPage = new NavigationPage(new PaginaPrincipal());</div>
+                        <div>
+                            }
+                        </div>
+                        <div>
+                            }
+                        </div>
+                        <br>
+                        el primer csharp, le da funcionalidad al boton, para que al presionarlo, nos lleve a la pagina secundaria y el 2do establece una instancia de NavigationPage que contiene la PaginaPrincipal. Esto proporciona una barra de navegación en la parte superior de la aplicación para facilitar la navegación hacia atrás.
+                    </li>
+
+                    
+                    <li class="list-group-item"><span class="font-weight-bold border border-1">FlyoutPage</span>
+                    <br>
+                    <br>  asi como NavigationPage, FlyoutPage es proveniente de la libreria xamarin.forms, esta permite desplejar un menu horizontal, en el cual se podran acceder a la pestañas 
+                    que esten disponibles en la aplicacion
+                    <br>
+                    <br>
+                    <div class="text-center font-weight-bold">Sintaxis de Ejemplo</div>
+                        
+                    <div>
+
+                        &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+                            &lt;FlyoutPage xmlns="http://xamarin.com/schemas/2014/forms"
+                                        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                                        x:Class="TuProyecto.MainPage"&gt;
+
+                                <!-- Menú lateral (Flyout) -->
+                                &lt;FlyoutPage.Flyout&gt;
+                                    &lt;ContentPage Title="Menú"&gt;
+                                        &lt;StackLayout&gt;
+                                            &lt;Label Text="Sección 1" /&gt;
+                                            &lt;Label Text="Sección 2" /&gt;
+                                            &lt;Label Text="Sección 3" /&gt;
+                                        &lt;/StackLayout&gt;
+                                    &lt;/ContentPage&gt;
+                                &lt;/FlyoutPage.Flyout&gt;
+
+                                <!-- Contenido principal -->
+                                &lt;FlyoutPage.Detail&gt;
+                                    &lt;NavigationPage&gt;
+                                        &lt;x:Arguments&gt;
+                                            &lt;ContentPage Title="Página Principal"&gt;
+                                                &lt;StackLayout&gt;
+                                                    &lt;Label Text="Contenido principal aquí" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" /&gt;
+                                                &lt;/StackLayout&gt;
+                                            &lt;/ContentPage&gt;
+                                        &lt;/x:Arguments&gt;
+                                    &lt;/NavigationPage&gt;
+                                &lt;/FlyoutPage.Detail&gt;
+
+                            &lt;/FlyoutPage&gt;
+
+
+
+                    </div>
+
+                    </li>
+
+                    <li class="list-group-item"><span class="font-weight-bold">TabbedPage</span></li>
+                    <br>
+                    <br>
+                </ul>
+            </div>
+        </div>
+
+        
+        <div class="card mb-3 bg-primary">
+            <div class="card-body">
+                <h2 class="card-title text-white text-center">Layouts</h2>
+                <ul class="list-group">
+                    <li class="list-group-item"><span class="font-weight-bold">StackLayout</span></li>
+                    <li class="list-group-item"><span class="font-weight-bold">Grid</span></li>
+                    <li class="list-group-item"><span class="font-weight-bold">AbsoluteLayout</span></li>
+                    <li class="list-group-item"><span class="font-weight-bold">FlexLayout</span></li>
+                </ul>
+            </div>
+        </div>
+
+      
+        <div class="card mb-3 bg-warning">
+            <div class="card-body">
+                <h2 class="card-title text-white text-center">Controles Gráficos</h2>
+                <ul class="list-group">
+                    <li class="list-group-item"><span class="font-weight-bold">Line</span></li>
+                    <li class="list-group-item"><span class="font-weight-bold">Polyline</span></li>
+                    <li class="list-group-item"><span class="font-weight-bold">BoxView</span></li>
+                    <li class="list-group-item"><span class="font-weight-bold">Rectangle</span></li>
+                    <li class="list-group-item"><span class="font-weight-bold">Ellipse</span></li>
+                    <li class="list-group-item"><span class="font-weight-bold">Polygon</span></li>
+                </ul>
+            </div>
+        </div>
+
+        
+        <div class="card mb-3 bg-success">
+            <div class="card-body">
+                <h2 class="card-title text-center text-white">Controles de Formulario</h2>
+                <ul class="list-group">
+                    <li class="list-group-item"><span class="font-weight-bold">Label</span></li>
+                    <li class="list-group-item"><span class="font-weight-bold">Entry</span></li>
+                    <li class="list-group-item"><span class="font-weight-bold">RadioButton</span></li>
+                    <li class="list-group-item"><span class="font-weight-bold">CheckBox</span></li>
+                    <li class="list-group-item"><span class="font-weight-bold">Switch</span></li>
+                    <li class="list-group-item"><span class="font-weight-bold">Slider</span></li>
+                    <li class="list-group-item"><span class="font-weight-bold">Stepper</span></li>
+                    <li class="list-group-item"><span class="font-weight-bold">DatePicker</span></li>
+                    <li class="list-group-item"><span class="font-weight-bold">TimePicker</span></li>
+                    <li class="list-group-item"><span class="font-weight-bold">Button</span></li>
+                    <li class="list-group-item"><span class="font-weight-bold">ImageButton</span></li>
+                    <li class="list-group-item"><span class="font-weight-bold">Picker</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card mb-3 border border-primary">
+            <div class="card-body ">
+                <h2 class="card-title text-center">Otros Controles</h2>
+                <ul class="list-group border border-danger">
+                    <li class="list-group-item"><span class="font-weight-bold">Border</span></li>
+                    <li class="list-group-item"><span class="font-weight-bold">Frame</span></li>
+                    <li class="list-group-item"><span class="font-weight-bold">Image</span></li>
+                    <li class="list-group-item"><span class="font-weight-bold">WebView</span></li>
+                    <li class="list-group-item"><span class="font-weight-bold">ActivityIndicator</span></li>
+                    <li class="list-group-item"><span class="font-weight-bold">ProgressBar</span></li>
+                    <li class="list-group-item"><span class="font-weight-bold">TableView</span></li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>
