@@ -6,7 +6,46 @@
     <title>ELEMENTOS MAUI</title>
     
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    
+    <style>
+        
+        .estrella {
+            width: 0;
+            height: 0;
+            border-left: 50px solid transparent;
+            border-right: 50px solid transparent;
+            border-bottom: 80px solid gold;
+            position: relative;
+            margin: 50px auto;
+        }
+        .estrella:before {
+            content: "";
+            width: 0;
+            height: 0;
+            border-left: 50px solid transparent;
+            border-right: 50px solid transparent;
+            border-top: 80px solid gold;
+            position: absolute;
+            top: 30px;
+            left: -50px;
+        }
+        .box-view {
+            width: 50px;
+            height: 50px;
+            background-color: green; 
+            border: 2px solid green;
+            margin: 0 auto; 
+            margin-top: 50px; 
+        }
+
+        .box-view2 {
+            width: 50px;
+            height: 100px;
+            background-color: red; 
+            border: 2px solid red;
+            margin: 0 auto; 
+            margin-top: 50px; 
+        }
+    </style>
 </head>
 <body>
 
@@ -264,7 +303,7 @@
                                             <div>VerticalOptions="CenterAndExpand" </div>
                                             <div>HorizontalOptions="CenterAndExpand" /&gt;</div>
                                          <br>
-                                        <div>  &lt;!-- Segundo Label --&gt;</div>
+                                        <br>
                                             <div>  &lt;Label Text="¡Bienvenido a Xamarin.Forms!" </div>
                                    <div> VerticalOptions="CenterAndExpand" </div>
                                    <div> HorizontalOptions="CenterAndExpand" /&gt;</div>
@@ -363,7 +402,7 @@
                         <br>
                         <br>
                         <div class="font-weight-bold text-center">Sintaxis de Ejemplo</div>
-                        
+                
 
                         <div> &lt;ContentPage xmlns="http://xamarin.com/schemas/2014/forms"</div>
                         <div>xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"</div>
@@ -377,7 +416,7 @@
                                     <br>
                                     <div>&lt;Button Text="Haz clic" FlexLayout.Grow="2" Clicked="OnButtonClicked" /&gt;</div>
                                     <br>
-                                    <div> &lt;!-- Elemento hijo 3 --&gt;</div>
+                                    
                                     <div>&lt;Label Text="Elemento 3" FlexLayout.Grow="1" /&gt;</div>
                                     <br>
                                     <div>&lt;/FlexLayout&gt;</div>
@@ -398,27 +437,82 @@
                     <br> Nos permite dibujar lineas en nuestra interfaz, 
                          lo unico que debemos hacer es especificar las coordenadas del punto inicial y el punto final
                     <br>
-                         <div class="font-weight-bold text-center"></div>
+                         <div class="font-weight-bold text-center">Sintaxis</div>
+
+                         <div>&lt;Line X1="0" Y1="0" X2="1" Y2="0" Stroke="Black" StrokeThickness="2" /&gt;</div>
+                         <br>
+                         <svg width="300" height="100">
+                            
+                            <line x1="50" y1="50" x2="250" y2="50" stroke="black" stroke-width="2" />
+                        </svg>
+
+                         <div>este es un ejemplo de una linea horizontal</div>
                     </li>
                     <li class="list-group-item"><span class="font-weight-bold">Polyline</span>
                     <br>
+                    <br> Nos permite dibujar multiples lineas que estaran conectadas entre si en nuestra interfaz
+                    <div class="font-weight-bold text-center">Sintaxis</div>
                     <br>
+
+                        <div>&lt;polyline points="0,0 50,50 100,0 150,50 200,0" stroke="black" stroke-width="2" fill="none" /&gt;</div>
+                            <br>
+                            <svg width="300" height="100">
+                               
+                                <polyline points="0,0 50,50 100,0 150,50 200,0" stroke="black" stroke-width="2" fill="none" />
+                            </svg>
+
+                            <div>Ejemplo de un polyline</div>
                     </li>
                     <li class="list-group-item"><span class="font-weight-bold">BoxView</span>
                     <br>
+                    <br> el elemento BoxView para representar un cuadro en la interfaz de usuario
+                    <br>
+                    <div> 
+                        &lt;BoxView Color="Red" HeightRequest="50" WidthRequest="50" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" /&gt;
+                    </div>
+
+                    <div class="box-view"></div>
+                    <br>
+                    <div>Ejemplo de un boxview</div>
                     <br>
                     </li>
                     <li class="list-group-item"><span class="font-weight-bold">Rectangle</span>
                     <br>
+                    <br> Para dibujar un rectangulo en la intefaz de maui, se utiliza el elemento rectangle
+                    para esto especifica la altura y anchura de tu rectangulo, de forma muy similar a box-view
+                    <div class="font-weight-bold text-center">Sintaxis</div>
                     <br>
+                    <div> 
+                        &lt;Rectangle WidthRequest="200" HeightRequest="100"/&gt;
+                    </div>
+                    <div class="box-view2"></div>
                     </li>
                     <li class="list-group-item"><span class="font-weight-bold">Ellipse</span>
                     <br>
+                    <br> El elemento Ellipse para representar una elipse en la interfaz de usuario  
+                    para esto especificas la altura y la anchura del elipse
+                    <div class="font-weight-bold text-center">Sintaxis</div>
                     <br>
+                    <div>&lt;Ellipse WidthRequest="100" HeightRequest="50" Fill="Blue"&gt;</div>
+                            <br>
+                            <svg width="300" height="150">
+                                <ellipse cx="210" cy="75" rx="80" ry="60" fill="blue" />
+                            </svg>
+
                     </li>
                     <li class="list-group-item"><span class="font-weight-bold">Polygon</span>
                     <br>
+                    <br> Polygon se puede usar para dibujar polígonos, 
+                    que son series conectadas de líneas que forman formas cerradas, su Unica diferencia con Polyline
+                    es que esta ultima no "cierra" la forma
+                    <div class="font-weight-bold text-center">Sintaxis</div>
                     <br>
+                    <div>&lt;Polygon Points="40,10 70,80 10,50"
+                        Fill="AliceBlue"
+                        Stroke="Green"
+                        StrokeThickness="5" /&gt;</div>
+
+                        <div class="estrella"></div>
                     </li>
                 </ul>
             </div>
