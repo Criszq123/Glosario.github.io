@@ -496,7 +496,7 @@
                     <div>&lt;Ellipse WidthRequest="100" HeightRequest="50" Fill="Blue"&gt;</div>
                             <br>
                             <svg width="300" height="150">
-                                <ellipse cx="210" cy="75" rx="80" ry="60" fill="blue" />
+                                <ellipse cx="180" cy="75" rx="80" ry="60" fill="blue" />
                             </svg>
 
                     </li>
@@ -525,51 +525,109 @@
                 <ul class="list-group">
                     <li class="list-group-item"><span class="font-weight-bold">Label</span>
                     <br>
-                    <br>
+                    <br> Representa un control de texto no editable utilizado para mostrar información descriptiva
+                    <div class="font-weight-bold text-center">Sintaxis</div>
+                    <div> 
+                        &lt;Label Text="Texto descriptivo" /&gt;
+                    </div>
                     </li>
                     <li class="list-group-item"><span class="font-weight-bold">Entry</span>
+                        <div class="font-weight-bold text-center">Sintaxis</div>
+                       
                     <br>
-                    <br>
+                    <br> Proporciona un campo de entrada de texto editable que permite al usuario ingresar datos.
+                    <div class="font-weight-bold text-center">Sintaxis</div>
+                        <div> 
+                            &lt;Entry Placeholder="Ingrese texto"/&gt;
+                        </div>
                     </li>
                     <li class="list-group-item"><span class="font-weight-bold">RadioButton</span>
                     <br>
-                    <br>
-                    </li>
+                    <br> Representa un botón de opción en un grupo de botones de opción mutuamente excluyentes.
+                    <div class="font-weight-bold text-center">Sintaxis</div>
+                        <div> 
+                            &lt;RadioButton Content="Opción 1" /&gt;
+                        </div>
+                        <div> 
+                            &lt;RadioButton Content="Opción 2" /&gt;
+                        </div>
+                     </li>
                     <li class="list-group-item"><span class="font-weight-bold">CheckBox</span>
                     <br>
-                    <br>
+                    <br> Representa una casilla de verificación que puede estar marcada o desmarcada.
+                    <div class="font-weight-bold text-center">Sintaxis</div>
+                        <div> 
+                            &lt;CheckBox Content="Aceptar términos y condiciones"/&gt;
+                        </div>
                     </li>
                     <li class="list-group-item"><span class="font-weight-bold">Switch</span>
                     <br>
-                    <br>
+                    <br>Proporciona un interruptor basculante que puede estar en posición de encendido o apagado.
+                    <div class="font-weight-bold text-center">Sintaxis</div>
+                        <div> 
+                            &lt;Switch IsToggled="false" /&gt;
+                        </div>
                     </li>
                     <li class="list-group-item"><span class="font-weight-bold">Slider</span>
                     <br>
-                    <br>
+                    <br> Permite al usuario seleccionar un valor de un rango continuo mediante un control deslizante.
+                    <div class="font-weight-bold text-center">Sintaxis</div>
+                        <div> 
+                            &lt;Slider Minimum="0" Maximum="100" Value="50" /&gt;
+                        </div>
                     </li>
                     <li class="list-group-item"><span class="font-weight-bold">Stepper</span>
                     <br>
-                    <br>
+                    <br>Permite al usuario aumentar o disminuir un valor numérico en incrementos predefinidos.
+                    <div class="font-weight-bold text-center">Sintaxis</div>
+                        <div> 
+                            &lt;Stepper Minimum="0" Maximum="10" Value="5" /&gt;
+                        </div>
                     </li>
                     <li class="list-group-item"><span class="font-weight-bold">DatePicker</span>
                     <br>
-                    <br>
+                    <br>Permite al usuario seleccionar una fecha.
+                    <div class="font-weight-bold text-center">Sintaxis</div>
+                        <div> 
+                            &lt;DatePicker Date="2023-01-01" /&gt;
+                        </div>
                     </li>
                     <li class="list-group-item"><span class="font-weight-bold">TimePicker</span>
                     <br>
-                    <br>
+                    <br>Permite al usuario seleccionar una hora.
+                    <div class="font-weight-bold text-center">Sintaxis</div>
+                        <div> 
+                            &lt;TimePicker Time="12:00" /&gt;
+                        </div>
                     </li>
                     <li class="list-group-item"><span class="font-weight-bold">Button</span>
                     <br>
-                    <br>
+                    <br>Representa un botón que puede ser presionado por el usuario para iniciar acciones o eventos.
+                    <div class="font-weight-bold text-center">Sintaxis</div>
+                        <div> 
+                            &lt;Button Text="Hacer algo" /&gt;
+                        </div>
                     </li>
                     <li class="list-group-item"><span class="font-weight-bold">ImageButton</span>
                     <br>
-                    <br>
+                    <br> Similar a un botón, pero con una imagen en lugar de texto.
+                    <div class="font-weight-bold text-center">Sintaxis</div>
+                        <div> 
+                            &lt;ImageButton Source="icon.png" /&gt;
+                        </div>
                     </li>
                     <li class="list-group-item"><span class="font-weight-bold">Picker</span>
                     <br>
-                    <br>
+                    <br> Proporciona una lista desplegable de la cual el usuario puede seleccionar una opción.
+                    <div class="font-weight-bold text-center">Sintaxis</div>
+                        <div>&lt;Picker Title="Seleccionar opción"&gt;</div>
+                        <div>&lt;Picker.ItemsSource&gt;</div>
+                        <div>&lt;x:String&gt;Option 1&lt;/x:String&gt;</div>
+                        <div>&lt;x:String&gt;Option 2&lt;/x:String&gt;</div>
+                        <div>&lt;/Picker.ItemsSource&gt;</div>
+                        <div>&lt;/Picker&gt;</div>
+                        
+                    <div></div>
                     </li>
                 </ul>
             </div>
@@ -581,31 +639,80 @@
                 <ul class="list-group border border-danger">
                     <li class="list-group-item"><span class="font-weight-bold">Border</span>
                     <br>
-                    <br>    
+                    <br>El Border es un elemento contenedor que te permite aplicar bordes decorativos a otros elementos.
+                    <div class="font-weight-bold text-center">Sintaxis</div>
+                    <div> 
+                        &lt;Border BorderColor="Black" BorderThickness="2"&gt;
+                    </div>
+                    <br>
+                    <div> 
+                        &lt;Border/&gt;
+                    </div>
+
                     </li>
                     <li class="list-group-item"><span class="font-weight-bold">Frame</span>
                     <br>
+                    <br> El Frame es un contenedor visual que puede contener otros elementos y proporciona un borde visual alrededor de su contenido.
+                    <div class="font-weight-bold text-center">Sintaxis</div>
+                    <div> 
+                        &lt;Frame BorderColor="Black" CornerRadius="10"&gt;
+                    </div>
                     <br>
+                    <div> 
+                        &lt;Frame/&gt;
+                    </div>
                     </li>
                     <li class="list-group-item"><span class="font-weight-bold">Image</span>
                     <br>
-                    <br>
+                    <br>El Image se utiliza para mostrar imágenes en la interfaz de usuario. Puede cargar imágenes desde recursos, URL u otras fuentes.
+                    <div class="font-weight-bold text-center">Sintaxis</div>
+                    <div> 
+                        &lt;Image Source="imagen.png" WidthRequest="100" HeightRequest="100" /&gt;
+                    </div>
                     </li>
                     <li class="list-group-item"><span class="font-weight-bold">WebView</span>
                     <br>
-                    <br>
+                    <br>El WebView es un contenedor para mostrar contenido web. Puedes cargar y mostrar páginas web o contenido HTML local.
+                    <div class="font-weight-bold text-center">Sintaxis</div>
+                    <div> 
+                        &lt;WebView Source="https://www.ejemplo.com"&gt;
+                    </div>
+                    <div> 
+                        &lt;/WebView&gt;
+                    </div>
                     </li>
                     <li class="list-group-item"><span class="font-weight-bold">ActivityIndicator</span>
                     <br>
-                    <br>
+                    <br>El ActivityIndicator muestra una animación que indica que se está realizando una operación en segundo plano. Es útil para mostrar que la aplicación está ocupada.
+                    <div class="font-weight-bold text-center">Sintaxis</div>
+                    <div> 
+                        &lt;ActivityIndicator IsRunning="true" Color="Blue"/&gt;
+                    </div>
                     </li>
                     <li class="list-group-item"><span class="font-weight-bold">ProgressBar</span>
                     <br>
-                    <br>
+                    <br>La ProgressBar representa visualmente el progreso de una operación. Se puede utilizar para mostrar el progreso de la carga de datos, la descarga de archivos, etc.
+                    <div class="font-weight-bold text-center">Sintaxis</div>
+                    <div> 
+                        &lt;ProgressBar Progress="0.7"/&gt;
+                    </div>
                     </li>
                     <li class="list-group-item"><span class="font-weight-bold">TableView</span>
                     <br>
-                    <br>    
+                    <br> El TableView es un control de lista que muestra datos en filas y columnas. Se utiliza comúnmente para mostrar datos tabulares.
+                    <div class="font-weight-bold text-center">Sintaxis</div>
+                    <br>
+                    <div>&lt;TableView&gt;</div>
+                    <div>&lt;TableRoot&gt;</div> 
+                    <div> &lt;TableSection Title="Sección 1"&gt;</div>
+                    <div>&lt;ViewCell&gt;</div>   
+                    <br>                        
+                    <div>&lt;/ViewCell&gt;</div>
+                    <div>&lt;/TableSection&gt;</div>            
+                    <div>&lt;/TableRoot&gt;</div>
+                    <div>&lt;/TableView&gt;</div>             
+                                        
+
                     </li>
                 </ul>
             </div>
